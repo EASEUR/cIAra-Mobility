@@ -29,19 +29,19 @@ Cela permet de stocker des données sur les clients, les stations et les véhicu
 
 | Table | Fonction | Clé Primaire |
 | :--- | :--- | :--- |
-| **client** | Référentiel des utilisateurs | `id_client` (SERIAL) |
-| **vehicule** | Inventaire technique de la flotte | `id_vehicule` (SERIAL) |
-| **station** | Localisation des points de retrait/dépôt | `id_station` (SERIAL) |
-| **location** | Enregistrement des transactions | `id_location` (SERIAL) |
+| **client** | Données des clients | `id_client` (SERIAL) |
+| **vehicule** | Données des vehicules (la flotte) | `id` (SERIAL) |
+| **station** | Données des points de ratrait et dépôt | `id_station` (SERIAL) |
+| **location** | Historique des locations contenant toutes les données réunies | `id_location` (SERIAL) |
 
 ---
 
 ## Difficultés rencontrées
-* **Gestion de l'ordre d'insertion** : Sincèrement, le plus compliqué n'a pas été de traiter les quêtes mais plutôt de créer des tableaux avec une organisation cohérentes entre eux.
-Il a fallu dans un premier temps créer des tables tampons qui possèdent des colonnes cohérentes pour y accueillir les futures données, en particulier la table véhicule dont nous avions déjà les données.
-Il a donc fallu créer les mêmes colonnes présentes dans le CSV.
-Concernant la table Location c'était aussi un peu complexe car c'est dans cette table qu'il y a toute les logiques de hiérarchie et de clés étrangères, il fallait créer des colonnes cohérentes au projet attendu.
-* **Double jointure sur une même table** : Concernant le tableau location, nous avions deux clés étrangères reliées à une clé primaire. Il a donc fallu faire preuve d'imagination pour mener à bien la quête en utilisant une double jointure et des alias.
+* **Gestion de l'ordre d'insertion** : La création des tableaux était aussi délicat que de créer les requêtes car il fallait construire une base solide qui respecte les hiérarchies entre elles pour mener à bien les requêtes ensuite.
+Il a fallu dans un premier temps créer des tables tampons qui possèdent des colonnes cohérentes pour y accueillir les futures données.
+Possédant déjà les données des véhicules, on a dû respecter les la cohérence des colonnes présentes dans le CSV.
+Concernant la table Location c'était aussi un peu complexe car c'est dans cette table qu'il fallait appliquer les logiques de clés étrangères.
+* **Double jointure sur une même table** : Concernant le tableau location, nous avions deux clés étrangères reliées à une clé primaire. Il a donc fallu faire preuve d'imagination pour mener à bien la quête 3.3 en utilisant une double jointure et des alias.
 
 ---
 
