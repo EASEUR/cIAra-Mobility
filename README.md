@@ -1,4 +1,4 @@
-# Rapport de Projet : Ciara Mobility
+# Rapport de Projet : cIAra Mobility
 
 ## Présentation de l'équipe
 * **Membre 1 :** Florent Folliard - Modélisation et Développement
@@ -21,7 +21,7 @@ Cela permet de stocker des données sur les clients, les stations et les véhicu
 * **Véhicule (1,1) <---> (0,N) Location** : Chaque véhicule possède un identifiant unique permettant un suivi précis de ses cycles d'utilisation.
 * **Station (1,1) <---> (0,N) Location** : La table location gère deux relations distinctes avec la table station (départ et arrivée).
 
-![Schéma MCD Ciara Mobility](assets/schema_mcd.png)
+![Schéma MCD cIAra Mobility](assets/MCD_CiaraMobility.jpg)
 
 ---
 
